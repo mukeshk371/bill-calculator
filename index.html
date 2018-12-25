@@ -12,27 +12,52 @@
 
 <body>
     <header>
-        <h1>Welcome to Bill Calculator</h1>
+        <h1>Welcome to The Super Market</h1>
     </header>
 
-    <nav>
+    <nav class="sticky">
         <a href="#" onclick="displayShowcase()">Menu</a>
         <div class="dropdown">
             <button class="dropbtn">My Cart</button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a>
+                    <table id="cart" class="cart">
+                        <tr>
+                            <th>Food Items</th>
+                            <th>Quantity</th>
+                            <th>Price (&#8377;)</th>
+                        </tr>
+                        
+                    </table>
+                    <table class="gst">
+                    	<tr class="total-price">
+                    		<td>Total Price</td>
+                    		<td id="total-price"></td>
+                    	</tr>
+                    	<tr>
+                    		<th>GST</th>
+                    		<th style="text-align: center;">18%</th>
+                    	</tr>
+                    	<tr class="final-price">
+                    		<td>Final Price</td>
+                    		<td id="final-price"></td>
+                    	</tr>
+                    </table>
+                </a>
+                <a style="text-align: center;">
+                    <button class="checkout calculate">Calculate</button>
+                    <button class="checkout">Checkout</button>
+                </a>
             </div>
         </div>
-
     </nav>
 
     <section>
         <ul id="showcase" class="showcase" align="center"></ul>
     </section>
 
-    <ul id="cart"></ul>
+    <ul></ul>
+
 </body>
 
 </html>
