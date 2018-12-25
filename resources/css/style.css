@@ -115,7 +115,7 @@ nav a:hover, .dropdown:hover .dropbtn {
   display: block;
 }
 
-.cart, .gst {
+.cart, .calculator {
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -137,11 +137,11 @@ td, th {
   padding: 8px;
 }
 
-.total-price, .final-price {
+.total-price, .gst {
 	background-color: #E0FFFF;
 }
 
-.gst tr {
+.calculator tr {
 	font-weight: bold;
 }
 
