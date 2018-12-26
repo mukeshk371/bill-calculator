@@ -36,6 +36,13 @@ var foodItemsList = [
 	},
 	{
 		"type" : ["atta"],
+		"name" : "Pillsbury Atta",
+		"quantity" : "10Kg",
+		"price" : 330,
+		"pic" : "resources/images/pillsbury-atta.jpg",
+	},
+	{
+		"type" : ["atta"],
 		"name" : "Aashirwaad Multigarins Atta",
 		"quantity" : "5Kg",
 		"price" : 235,
@@ -54,12 +61,5 @@ var foodItemsList = [
 		"quantity" : "5Kg",
 		"price" : 250,
 		"pic" : "resources/images/pillsbury-multigrain.jpg",
-	},
-	{
-		"type" : ["atta"],
-		"name" : "Pillsbury Atta",
-		"quantity" : "10Kg",
-		"price" : 330,
-		"pic" : "resources/images/pillsbury-atta.jpg",
 	}
 ]

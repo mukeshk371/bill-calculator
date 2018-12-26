@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script type="text/javascript" src="resources/js/food-items.js"></script>
     <script type="text/javascript" src="resources/js/food-items-showcase.js"></script>
 </head>
 
-<body>
+<body onload="displayShowcase(); zeroNumber()">
     <header>
         <h1>Welcome to The Super Market</h1>
     </header>
 
     <nav class="sticky">
-        <a href="#" onclick="displayShowcase()">Menu</a>
+        <a href="#" onclick="displayShowcase()"><i class="ion-grid"></i>Menu</a>
         <div class="dropdown">
-            <button class="dropbtn">My Cart</button>
+        	<div id="box"><p id="number">0</p></div>
+            <button class="dropbtn"><i class="ion-ios-cart"></i>My Cart</button>
             <div class="dropdown-content">
                 <a>
                     <table id="cart" class="cart">
@@ -35,8 +37,8 @@
                     		<td id="total-price"></td>
                     	</tr>
                     	<tr class="gst">
-                    		<td>GST</th>
-                    		<td style="text-align: center;">18%</th>
+                    		<td>GST - 18%</th>
+                    		<td style="text-align: center;" id="gst"></th>
                     	</tr>
                     	<tr class="final-price">
                     		<th>Final Price</td>

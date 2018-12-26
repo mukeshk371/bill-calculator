@@ -38,6 +38,27 @@ nav a {
   text-decoration: none;
 }
 
+#box {
+	width: 19px;
+	height: 19px;
+	background-color: #4CAF50;
+	position: absolute;
+	z-index: 9999;
+	border-radius: 10px;
+	left: 98%;
+	color: white;
+}
+
+#number {
+	text-align: center;
+	font-weight: bold;
+}
+
+.ion-ios-cart, .ion-grid {
+	margin-right: 5px;
+	font-weight: bold;
+}
+
 .dropdown {
   float: right;
   overflow: hidden;
@@ -57,7 +78,7 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-  background-color: #4CAF50;
+  background-color: #1abc9c;
 }
 
 .dropdown-content {
