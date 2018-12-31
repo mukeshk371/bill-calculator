@@ -10,7 +10,7 @@ function createList(details) {
 	figure.appendChild(image);
 
 	var quantity = document.createElement("H3");
-	quantity.innerHTML = details.quantity;
+	quantity.innerHTML = details.weight;
 
 	var price = document.createElement("H3");
 	price.innerHTML = details.price;
@@ -31,13 +31,14 @@ function createList(details) {
 }
 
 
-function displayShowcase() {
+function displayShowcase(type) {
 	var showcaseDiv = document.getElementById("showcase");
 
 	while(showcaseDiv.firstChild) {
 		showcaseDiv.removeChild(showcaseDiv.firstChild);
 	}
 
+	var foodItemsList = filterItemList(type);
 	for (var i = 0; i < foodItemsList.length; i++) {
 		var li = createList(foodItemsList[i]);
 		showcaseDiv.appendChild(li);
@@ -53,6 +54,13 @@ function addToCart(elem) {
 		"quantity" : 1,
 		"price" : elem.parentNode.childNodes[3].innerHTML,
 	}
+	for(var i = 0; i < addedItems.length; i++) {
+		var itemName = addedItems[i].name;
+		var itemQuantity = addedItems[i].quantity;
+		if (addedItems[i].name === itemDetail.name) {
+			itemDetail.quantity += 1;
+		}
+	}
 	addedItems.push(itemDetail);
 	console.log(itemDetail);
 	addItemToCart(itemDetail);
@@ -61,6 +69,17 @@ function addToCart(elem) {
 
 
 function addItemToCart(item){
+	var total = 0;
+    
+    for(var i = 0; i < addedItems.length; i++) {
+    	var price = parseInt(addedItems[i].price);
+    	var itemPrice = addedItems[i].quantity * price;
+    	total += price; 
+    }
+
+    var gst = total * 18/100;
+    var final = total + gst;
+
 	var cartDiv = document.getElementById("cart");
 	
 	var foodItem = document.createElement("TD");
@@ -72,7 +91,7 @@ function addItemToCart(item){
 
 	var foodItemPrice = document.createElement("TD");
 	foodItemPrice.classList.add("price");
-	foodItemPrice.innerHTML = item.price;
+	foodItemPrice.innerHTML = itemPrice;
 
 	var content = document.createElement("TR");
 	content.appendChild(foodItem);
@@ -81,16 +100,6 @@ function addItemToCart(item){
 
 	cartDiv.appendChild(content);
 
-    var total = 0;
-    
-    for(var i = 0; i < addedItems.length; i++) {
-    	var price = parseInt(addedItems[i].price);
-    	total += price; 
-    }
-
-    var gst = total * 18/100;
-    var final = total + gst;
-    
 	var totalPrice = document.getElementById("total-price");
 	totalPrice.innerHTML = "&#8377;" + total;
 
@@ -103,12 +112,12 @@ function addItemToCart(item){
 
 
 var n = 0;
+
 function increaseNumber() {
 	n += 1;
 	document.getElementById("number").innerHTML = n;
 	zeroNumber(); 
 }
-
 
 function zeroNumber() {
 	if (document.getElementById("number").innerHTML == 0) {
@@ -117,4 +126,21 @@ function zeroNumber() {
 	else {
 		document.getElementById("box").style.display = "block";
 	}
+}
+
+
+function filterItemList(itemType) {
+	if (itemType == "all") {
+		return foodItemsList;
+	}
+	var filteredArray = [];
+	for(var i = 0; i < foodItemsList.length; i++) {
+		var type = foodItemsList[i].type;
+		for (var j = 0; j < type.length; j++) {
+			if (type[j] == itemType) {
+				filteredArray.push(foodItemsList[i]);
+			}
+		}
+	}
+	return filteredArray;
 }

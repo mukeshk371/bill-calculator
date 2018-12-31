@@ -20,6 +20,10 @@ header h1 {
 	margin: 20px;
 }
 
+header h1:hover {
+	color: white;
+}
+
 
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 /*                                                            NAVBAR                                                           */
@@ -54,7 +58,7 @@ nav a {
 	font-weight: bold;
 }
 
-.ion-ios-cart, .ion-grid {
+i {
 	margin-right: 5px;
 	font-weight: bold;
 }
@@ -63,7 +67,6 @@ nav a {
   float: right;
   overflow: hidden;
   display: inline-block;
-
 }
 
 .dropdown .dropbtn, .checkout {
@@ -75,6 +78,7 @@ nav a {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  cursor: pointer;
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
@@ -88,7 +92,10 @@ nav a:hover, .dropdown:hover .dropbtn {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  right: 0;
+}
+
+.cart-content {
+	right: 0;
 }
 
 .dropdown-content a {
@@ -107,25 +114,14 @@ nav a:hover, .dropdown:hover .dropbtn {
     border-radius: 35px;
     cursor: pointer;
     border: 1px solid #1abc9c;
-    float: right;
     margin-bottom: 10px;
 }
-
-.calculate {
-    border: 1px solid #e67e22;
-    float: left;
-}
-
 
 .checkout:hover {
 	color: white;
 	background-color: #1abc9c;
 	transition-duration: 0.6s;
     box-shadow: 2px 2px 3px black;
-}
-
-.calculate:hover {
-    background-color: #e67e22;
 }
 
 .dropdown-content a:hover {
@@ -170,6 +166,29 @@ td, th {
 	text-align: center;
 }
 
+.view-all {
+	text-align: right !important;
+	font-weight: bold;
+}
+
+/*------------------MENU DROPDOWN------------------*/
+.menu {
+	float: left;
+}
+
+.menu-content {
+	left: 0;
+}
+
+.menu-content a {
+	font-size: 80%;
+}
+
+.menu-content a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 /*                                                              LIST                                                           */
 /*-----------------------------------------------------------------------------------------------------------------------------*/
@@ -209,11 +228,11 @@ td, th {
     padding: 5px 10px;
     font-size: 80%;
     margin-top: 0;
-    border: 1px solid green;
+    border: 1px solid #4CAF50;
 }
 
 .add-btn:hover {
-    background-color: green;
+    background-color: #4CAF50;
     color: #fff;
     transition-duration: 0.4s;
     box-shadow: 2px 2px 3px black;

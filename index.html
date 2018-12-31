@@ -11,17 +11,37 @@
     <script type="text/javascript" src="resources/js/food-items-showcase.js"></script>
 </head>
 
-<body onload="displayShowcase(); zeroNumber()">
+<body onload="displayShowcase('all'); zeroNumber()">
     <header>
         <h1>Welcome to The Super Market</h1>
     </header>
 
     <nav class="sticky">
-        <a href="#" onclick="displayShowcase()"><i class="ion-grid"></i>Menu</a>
+    	<div class="dropdown menu">
+    		<button class="dropbtn"><i class="ion-grid"></i>Shop By Category</button>
+    		<div class="dropdown-content menu-content">
+    			<a href="#" onclick="displayShowcase('fruit')">Fruits & Vegetables</a>
+    			<a href="#" onclick="displayShowcase('foodgrain')">Foodgrains, Oil & Masala</a>
+    			<a href="#">Bakery, Cakes & Dairy</a>
+    			<a href="#">Beverages</a>
+    			<a href="#">Snacks & Branded Foods</a>
+    			<a href="#">Beauty & Hygiene</a>
+    			<a href="#">Cleaning & Household</a>
+    			<a href="#">Kitchen, Garden & Pets</a>
+    			<a href="#">Eggs, Meat & Fish</a>
+    			<a href="#">Gourmet & World Food</a>
+    			<a href="#" class="view-all" onclick="displayShowcase('all');">View All <i class="ion-arrow-right-a"></i></a>
+    		</div>
+    	</div>
+        
+        <a href="#"><i class="ion-pricetag"></i>Offers</a>
+        <a href="#"><i class="ion-ios-location"></i>Store Locator</a>
+
+
         <div class="dropdown">
         	<div id="box"><p id="number">0</p></div>
             <button class="dropbtn"><i class="ion-ios-cart"></i>My Cart</button>
-            <div class="dropdown-content">
+            <div class="dropdown-content cart-content">
                 <a>
                     <table id="cart" class="cart">
                         <tr>
@@ -47,10 +67,19 @@
                     </table>
                 </a>
                 <a style="text-align: center;">
-                    <button class="checkout calculate">Calculate</button>
                     <button class="checkout">Checkout</button>
                 </a>
             </div>
+        </div>
+
+        <a href="#" style="float: right;"><i class="ion-android-person-add"></i>Sign Up</a>
+        <div class="dropdown">
+        	<button class="dropbtn"><i class="ion-android-person"></i>Log In</button>
+        	<div class="dropdown-content signup-content">
+        		<a><input type="text" class="username" name="username" placeholder="Enter Your Username"></a>
+        		<a><input type="text" class="password" name="password" placeholder="Enter Your Password"></a>
+        		<a><button class="add-btn">Log In</button></a>
+        	</div>
         </div>
     </nav>
 
