@@ -55,10 +55,9 @@ function addToCart(elem) {
 		"price" : elem.parentNode.childNodes[3].innerHTML,
 	}
 	for(var i = 0; i < addedItems.length; i++) {
-		var itemName = addedItems[i].name;
-		var itemQuantity = addedItems[i].quantity;
 		if (addedItems[i].name === itemDetail.name) {
 			itemDetail.quantity += 1;
+			addedItems.splice(i, 1);
 		}
 	}
 	addedItems.push(itemDetail);

@@ -5,18 +5,21 @@
     <title>Bill Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="text/javascript" src="resources/js/javascript.js"></script>
     <script type="text/javascript" src="resources/js/food-items.js"></script>
     <script type="text/javascript" src="resources/js/food-items-showcase.js"></script>
 </head>
 
-<body onload="displayShowcase('all'); zeroNumber()">
+<body onload="displayShowcase('all'); zeroNumber();">
     <header>
         <h1>Welcome to The Super Market</h1>
     </header>
 
-    <nav class="sticky">
+    <nav class="sticky" id="navbar">
+    	<a href="javascript:void(0);" align="center" class="icon" onclick="singleNavButton()"><i class="ion-navicon"></i></a>
     	<div class="dropdown menu">
     		<button class="dropbtn"><i class="ion-grid"></i>Shop By Category</button>
     		<div class="dropdown-content menu-content">

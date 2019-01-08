@@ -42,6 +42,10 @@ nav a {
   text-decoration: none;
 }
 
+.icon {
+  display: none;
+}
+
 #box {
 	width: 19px;
 	height: 19px;
